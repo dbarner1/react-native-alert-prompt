@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import {
   Button,
+  KeyboardAvoidingView,
   Platform,
   StyleSheet,
   Text,
@@ -24,7 +25,8 @@ export default class App extends Component<Props> {
     super(props);
 
     this.state = {
-      alertVisible: false
+      alertVisible: false,
+      deleted: 0,
     }
   }
 
@@ -37,19 +39,38 @@ export default class App extends Component<Props> {
   rePromptText = () => {
     return (
       <Text>
-        <Text style={{fontWeight: 'bold'}}>Oops!</Text> That wasn't correct.  Please enter exactly <Text style={{fontWeight: 'bold'}}>DELETE</Text> to confirm deletion.  All associated memories will be deleted.
+        <Text style={{fontWeight: 'bold'}}>Oops!</Text> That wasn't correct.  Please enter exactly <Text style={{fontWeight: 'bold'}}>DELETE</Text> to confirm deletion.  This post will be deleted.
       </Text>
     )
   }
 
   render() {
+    const { deleted } = this.state;
     return (
       <View style={styles.container}>
-        <Button onPress= {() => this.turnOnAlert()} title="Alert me!" />
+      {deleted === 1 || deleted === 2 ? (
+         <View>
+           <Text style={{ marginTop: 30 }}>Account successfully deleted!</Text>
+         </View>
+        ) : (
+          <View style={styles.buttonBackground}>
+            <Button onPress= {() => this.turnOnAlert()} title="Delete this account" color="black" />
+          </View>
+        )}
+        {deleted === 2 ? (
+           <View>
+             <Text style={{ marginTop: 30 }}>Account successfully deleted!</Text>
+           </View>
+          ) : (
+            <View style={styles.buttonBackground}>
+              <Button onPress= {() => this.turnOnAlert()} title="Delete this account" color="black" />
+            </View>
+          )}
+
         <AlertPrompt
           animation={"fade"}
           androidColor={'rgba(0, 150, 136,1)'}
-          checkDelay={250}
+          checkDelay={20}
           autoFocus={true}
           cancelButtonText={'Cancel'}
           confirmButtonText={'Confirm'}
@@ -60,7 +81,7 @@ export default class App extends Component<Props> {
           alertSubject={"Are you sure?"}
           promptText={<Text>Are you sure you want to delete this post?  Enter exactly DELETE to delete it.</Text>}
           rePromptText={this.rePromptText}
-          successfulAnswer={() => this.setState({ alertVisible: false })}
+          successfulAnswer={() => this.setState({ alertVisible: false, deleted: this.state.deleted+1 })}
           closePrompt={() => this.setState({ alertVisible: false})}
         />
       </View>
@@ -71,18 +92,12 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#D3D3D3',
+    justifyContent: 'center',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  buttonBackground: {
+    marginTop: 30,
+    padding: 5,
+  }
 });

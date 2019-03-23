@@ -1,7 +1,6 @@
 {
-  "name": "alertTesting",
-  "version": "0.0.1",
-  "private": true,
+  "name": "react-native-alert-prompt",
+  "version": "0.0.2",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
@@ -11,6 +10,7 @@
   "dependencies": {
     "react": "*",
     "react-native": "*",
+    "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-timer": "^1.3.6"
   },
   "devDependencies": {
@@ -25,5 +25,16 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "description": "An ios and android alert that includes a prompt for the user.  Styled using ios design and material design by default.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbarner1/react-native-alert-prompt.git"
+  },
+  "author": "Dave Barner (dbarner@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dbarner1/react-native-alert-prompt/issues"
+  },
+  "homepage": "https://github.com/dbarner1/react-native-alert-prompt#readme"
 }
