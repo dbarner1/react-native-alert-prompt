@@ -1,6 +1,6 @@
 # react-native-alert-prompt
 <img align="center" src="https://badge.fury.io/js/react-native-alert-prompt.svg" />
-An ios and android alert that includes a prompt for the user.  If the user inputs what you expect, it exits with the `successfulAnswer` prop.  Fully customizable, and styled using ios design and material design by default.
+An ios and android styled alert that includes a prompt for the user.  If the user inputs what you expect, it exits with the `successfulAnswer` prop.  Fully customizable, and styled using ios design and material design by default.
 <br />
 <br />
 <p>
@@ -66,3 +66,7 @@ Install via npm:
 | cancelButtonText              | string     | Yes        |   'Cancel'      | The text shown for the cancel option.        |
 | confirmButtonText              | string      | Yes        |    'Confirm'     | The text shown for the confirm option.        |
 | placeHolderText              | string      | Yes        |    'Enter here'     | The placeholder text shown in the text input.        |
+
+
+## Contributions/Suggestions
+Feel free to add issues and PRs.  As with any project, there are things to improve!
