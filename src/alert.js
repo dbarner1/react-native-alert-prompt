@@ -58,7 +58,7 @@ export default class AlertPrompt extends Component {
     })
   }
 
-  checkDeleteJournalPrompt() {
+  checkPrompt() {
     const stylez = Platform.OS != 'ios' ? androidStyles : styles;
     const { journalDeletionInputText } = this.state;
     const { promptText, validationCaseSensitive, validationText } = this.props;
@@ -133,7 +133,7 @@ export default class AlertPrompt extends Component {
                 }
                 placeholderTextColor={'#dcddde'}
                 enablesReturnKeyAutomatically
-                onSubmitEditing={() => this.checkDeleteJournalPrompt()}
+                onSubmitEditing={() => this.checkPrompt()}
                 clearTextOnFocus
                 onChangeText={text =>
                   this.setState({ journalDeletionInputText: text })
