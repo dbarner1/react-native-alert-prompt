@@ -5,7 +5,7 @@ An ios and android styled alert that includes a prompt for the user.  If the use
 <br />
 <p>
   <img align="left" src="android_ux2.gif" width="47.5%" style="margin-bottom: 200px;" />
-  <img align="left" src="ios_ux.gif" width="47.5%" />
+  <img align="left" src="ios_ux2.gif" width="47.5%" />
 
 </p>
 <br/>
