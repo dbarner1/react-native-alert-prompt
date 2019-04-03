@@ -59,6 +59,11 @@ export default class AlertPrompt extends Component {
   }
 
   checkPrompt() {
+    if(this.props.alertOnly) {
+      this.setState({ promptVisible: true, promptText: promptText, journalDeletionInputText: "" });
+      this.props.successfulAnswer();
+    }
+
     const stylez = Platform.OS != 'ios' ? androidStyles : styles;
     const { journalDeletionInputText } = this.state;
     const { promptText, validationCaseSensitive, validationText } = this.props;
@@ -82,6 +87,7 @@ export default class AlertPrompt extends Component {
 
   render() {
     const {
+      alertOnly,
       alertWrapperStyle,
       animationType,
       autoFocus,
@@ -122,6 +128,7 @@ export default class AlertPrompt extends Component {
             <View style={[styles.topArea, topAreaStyle]}>
               <Text style={conditionalStyle.alertSubject}>{alertSubject}</Text>
               <Text style={conditionalStyle.alertText}>{promptText}</Text>
+            {alertOnly != true && (
               <TextInput
                 editable={true}
                 style={conditionalStyle.textInput}
@@ -147,6 +154,7 @@ export default class AlertPrompt extends Component {
                 }
                 value={journalDeletionInputText}
               />
+            )}
             </View>
             <View style={conditionalStyle.alertOptionRow}>
               <TouchableOpacity
@@ -156,7 +164,7 @@ export default class AlertPrompt extends Component {
                 <Text style={conditionalStyle.cancelOption}>{cancelButtonText ? cancelButtonText : 'Cancel'}</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => this.checkDeleteJournalPrompt()}
+                onPress={() => this.checkPrompt()}
                 style={conditionalStyle.confirmOptionButton}
               >
                 <Text style={conditionalStyle.confirmOption}>{confirmButtonText ? confirmButtonText : 'Confirm'}</Text>

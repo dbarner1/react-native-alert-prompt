@@ -3,9 +3,9 @@
 An ios and android styled alert that includes a prompt for the user.  If the user inputs what you expect, it exits with the `successfulAnswer` prop.  Fully customizable, and styled using ios design and material design by default.
 <br />
 <br />
-<p>
-<img align="left" src="https://github.com/dbarner1/react-native-alert-prompt/raw/master/android_ux2.gif" width="47.5%" style="margin-bottom: 200px;" />
-<img align="left" src="https://github.com/dbarner1/react-native-alert-prompt/raw/master/ios_ux2.gif" width="47.5%" />
+<p align="center">
+<img align="left" src="https://github.com/dbarner1/react-native-alert-prompt/raw/master/android_ux2.gif" margin="5px" width="47.5%" style="margin-bottom: 200px;" />
+<img align="left" src="https://github.com/dbarner1/react-native-alert-prompt/raw/master/ios_ux2.gif" margin="5px" width="47.5%" />
 </p>
 <br/>
 <br/>
@@ -13,7 +13,10 @@ An ios and android styled alert that includes a prompt for the user.  If the use
 <br/>
 
 
-
+## Changes in 0.0.6
+- No breaking changes.
+- Now able to show *just* an alert to the user, and not include the prompt input.
+- Fixes checkPrompt()
 
 ## Install
 Install via npm:
@@ -28,6 +31,7 @@ Install via npm:
 
 ```
  <AlertPrompt
+   alertOnly={false}
    animation={"fade"}
    androidColor={'rgba(0, 150, 136,1)'}
    checkDelay={20}
@@ -65,6 +69,7 @@ Install via npm:
 | cancelButtonText              | string     | Yes        |   'Cancel'      | The text shown for the cancel option.        |
 | confirmButtonText              | string      | Yes        |    'Confirm'     | The text shown for the confirm option.        |
 | placeHolderText              | string      | Yes        |    'Enter here'     | The placeholder text shown in the text input.        |
+| alertOnly | boolean | Yes | false | Whether the prompt should include a prompt (set this to false, or just don't include it), or just be an alert (set as true).
 
 
 ## Contributions/Suggestions

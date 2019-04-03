@@ -68,6 +68,7 @@ export default class App extends Component<Props> {
           )}
 
         <AlertPrompt
+          alertOnly={false}
           animation={"fade"}
           androidColor={'rgba(0, 150, 136,1)'}
           checkDelay={20}
