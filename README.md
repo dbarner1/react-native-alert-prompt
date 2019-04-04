@@ -2,8 +2,9 @@
 <img align="center" src="https://badge.fury.io/js/react-native-alert-prompt.svg" />
 An ios and android styled alert that includes a prompt for the user.  If the user inputs what you expect, it exits with the `successfulAnswer` prop.  Fully customizable, and styled using ios design and material design by default.
 <br />
+
 ## Requests?
-- What else would you like to see?  Post an issue, and we can chat/make it happen.
+What else would you like to see?  Post an issue, and we can chat/make it happen.
 <br />
 <br />
 <p align="center">
